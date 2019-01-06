@@ -79,6 +79,7 @@ public class ProjectService {
 			
 			Project project = new Project();
 			project.setProject_no(no);
+			project = projectDao.selectByNo(project);
 			
 			ProjectContent content = new ProjectContent();
 			content.setProject_no(no);

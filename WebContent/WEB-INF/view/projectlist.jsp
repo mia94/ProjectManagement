@@ -31,7 +31,7 @@
 		
 		<c:forEach var="item" items="${list }">
 			<tr>
-				<td><a href="">${item.project_name }</a></td>
+				<td><a href="read.do?no=${item.project_no }">${item.project_name }</a></td>
 				<td>${item.startdate }</td>
 				<td>${item.enddate }</td>
 				<td>${item.progress }</td>

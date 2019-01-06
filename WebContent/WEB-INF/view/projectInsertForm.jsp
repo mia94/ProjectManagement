@@ -20,7 +20,7 @@
 </style>
 </head>
 <body>
-	<form action="" method="post">
+	<form action="${pageContext.request.contextPath }/project/insert.do" method="post">
 		<fieldset>
 			<p>
 				<label>프로젝트 이름</label>
@@ -32,11 +32,11 @@
 			</p>
 			<p>
 				<label>시작날짜</label>
-				<input type="date" name="project_name">
+				<input type="date" name="startdate">
 			</p>
 			<p>
 				<label>종료날짜</label>
-				<input type="date" name="project_name">
+				<input type="date" name="enddate">
 			</p>
 			<p>
 				<select name="progress">
