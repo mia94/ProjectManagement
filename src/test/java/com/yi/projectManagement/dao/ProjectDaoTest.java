@@ -24,6 +24,7 @@ public class ProjectDaoTest {
 			Project project = new Project();
 			project.setProject_name("테스트용 제목");
 			project.setStartdate(new Date());
+			project.setStartdate(new Date());
 			project.setEnddate(new Date());
 			project.setProgress("준비");
 			dao.insert(project);

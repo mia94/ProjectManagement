@@ -27,6 +27,6 @@
 <body>
 	<h2>프로젝트 관리 시스템</h2>
 	<p><a href="project/list.do">프로젝트리스트보기</a></p><!-- 프로젝트상세보기, 수정, 삭제 가능해야함 -->
-	<p><a href="">새 프로젝트 등록하기</a></p>
+	<p><a href="project/insert.do">새 프로젝트 등록하기</a></p>
 </body>
 </html>

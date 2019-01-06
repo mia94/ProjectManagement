@@ -21,7 +21,7 @@ public class ProjectService {
 		return service;
 	}
 	
-	public int insertProject(String name, String content, Date enddate, String progress){
+	public int insertProject(String name, String content,Date startdate, Date enddate, String progress){
 		/*
 		 * 1. project에 저장
 		 * 2. project_content 저장  
@@ -33,7 +33,7 @@ public class ProjectService {
 			session = MySqlSessionFactory.openSession();
 			//project
 			ProjectDao projectdao = session.getMapper(ProjectDao.class);
-			Project project = new Project(0, name, new Date(), enddate, progress);
+			Project project = new Project(0, name, startdate, enddate, progress);
 			projectdao.insert(project);
 			int no = projectdao.selectLastNo();
 			if(no<0){
