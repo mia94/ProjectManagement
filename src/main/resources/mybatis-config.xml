@@ -6,9 +6,8 @@
 	<properties resource="db.properties"/>
     
     <typeAliases>
-    	<typeAlias type="com.yi.board.model.Member" alias="Member"/>
-    	<typeAlias type="com.yi.board.model.Article" alias="Article"/>
-    	<typeAlias type="com.yi.board.model.ArticleContent" alias="ArticleContent"/>
+    	<typeAlias type="com.yi.projectManagement.model.Project" alias="Project"/>
+    	<typeAlias type="com.yi.projectManagement.model.ProjectContent" alias="ProjectContent"/>
     </typeAliases>
     
   <environments default="development">
