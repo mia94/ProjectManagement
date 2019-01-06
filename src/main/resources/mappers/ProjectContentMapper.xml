@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.yi.projectManagement.dao.ProjectContentDao">
+	<insert id="insert" parameterType="ProjectContent">
+		INSERT INTO project_content (project_no, content)
+		VALUES(#{project_no}, #{content})
+	</insert>
+	
+	<select id="select" resultType="ProjectContent">
+		select * from project_content order by project_no desc
+	</select>
+	
+	<select id="selectLastNo" resultType="int">
+		select last_insert_id()
+	</select>
+	
+	<select id="selectByNo" parameterType="ProjectContent" resultType="ProjectContent">
+		select * from project_content where project_no = #{project_no}
+	</select>
+	
+	<delete id="deleteByNo" parameterType="ProjectContent">
+		DELETE FROM project_content WHERE project_no=#{project_no}
+	</delete>
+	
+	<update id="update" parameterType="ProjectContent">
+		UPDATE project_content
+		SET content=#{content}
+		WHERE project_no=#{project_no}
+	</update>
+
+</mapper>

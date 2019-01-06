@@ -39,9 +39,8 @@
   </environments>
   
   <mappers>
-  	<mapper resource="mappers/MemberMapper.xml"/>
-  	<mapper resource="mappers/ArticleMapper.xml"/>
-  	<mapper resource="mappers/ArticleContentMapper.xml"/>
+  	<mapper resource="mappers/ProjectMapper.xml"/>
+  	<mapper resource="mappers/ProjectContentMapper.xml"/>
   </mappers>
   
 </configuration>
