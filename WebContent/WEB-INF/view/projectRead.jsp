@@ -15,6 +15,19 @@
 		padding: 5px;
 	}
 </style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+	$(function(){
+		$("#delBtn").click(function(){
+			var del = confirm("정말 삭제하시겠습니까?");
+			if(del==true){
+				$("#delBtn").prop("disabled",false);
+			}else{
+				$("#delBtn").prop("disabled",true);
+			}
+		})
+	})
+</script>
 </head>
 <body>
 	<table>
@@ -42,7 +55,7 @@
 	
 	<p>
 		<a href="${pageContext.request.contextPath }/project/modify.do?project_no=${map.project.project_no }">[수정]</a>
-		<a href="${pageContext.request.contextPath }/project/delete.do?project_no=${map.project.project_no }">[삭제]</a>
+		<a href="${pageContext.request.contextPath }/project/delete.do?project_no=${map.project.project_no }" id="delBtn">[삭제]</a>
 		<a href="${pageContext.request.contextPath }/project/list.do">[돌아가기]</a>
 	</p>
 </body>

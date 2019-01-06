@@ -9,6 +9,7 @@ import org.apache.ibatis.session.SqlSession;
 import org.junit.Test;
 
 import com.yi.projectManagement.model.Project;
+import com.yi.projectManagement.model.ProjectContent;
 import com.yi.projectManagement.mvc.MySqlSessionFactory;
 
 public class ProjectDaoTest {
@@ -27,6 +28,10 @@ public class ProjectDaoTest {
 			project.setStartdate(new Date());
 			project.setEnddate(new Date());
 			project.setProgress("준비");
+			
+			ProjectContent content = new ProjectContent();
+			content.setProject_no(project.getProject_no());
+			content.setContent("테스트용 내용");
 			dao.insert(project);
 			session.commit();
 		} catch (Exception e) {
