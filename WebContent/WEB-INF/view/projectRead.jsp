@@ -21,10 +21,9 @@
 		$("#delBtn").click(function(){
 			var del = confirm("정말 삭제하시겠습니까?");
 			if(del==true){
-				$("#delBtn").prop("disabled",false);
-			}else{
-				$("#delBtn").prop("disabled",true);
+				location.href="${pageContext.request.contextPath }/project/delete.do?project_no=${map.project.project_no }";
 			}
+			return false;
 		})
 	})
 </script>

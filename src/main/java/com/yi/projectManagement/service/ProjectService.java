@@ -1,6 +1,7 @@
 package com.yi.projectManagement.service;
 
 import java.sql.SQLException;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
@@ -21,7 +22,7 @@ public class ProjectService {
 		return service;
 	}
 	
-	public int insertProject(String name, String content,Date startdate, Date enddate, String progress){
+	public int insertProject(String name, String content,String start, String end, String progress){
 		/*
 		 * 1. project에 저장
 		 * 2. project_content 저장  
@@ -33,6 +34,11 @@ public class ProjectService {
 			session = MySqlSessionFactory.openSession();
 			//project
 			ProjectDao projectdao = session.getMapper(ProjectDao.class);
+			//String date로 변환
+			SimpleDateFormat dt = new SimpleDateFormat("yyyy-mm-dd"); 
+			Date startdate = dt.parse(start);
+			Date enddate = dt.parse(end);
+			
 			Project project = new Project(0, name, startdate, enddate, progress);
 			projectdao.insert(project);
 			int no = projectdao.selectLastNo();

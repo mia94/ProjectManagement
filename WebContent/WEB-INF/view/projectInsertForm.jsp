@@ -32,11 +32,11 @@
 			</p>
 			<p>
 				<label>시작날짜</label>
-				<input type="date" name="startdate">
+				<input type="text" name="startdate">
 			</p>
 			<p>
 				<label>종료날짜</label>
-				<input type="date" name="enddate">
+				<input type="text" name="enddate">
 			</p>
 			<p>
 				<select name="progress">

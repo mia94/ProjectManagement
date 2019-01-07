@@ -20,7 +20,7 @@
 </style>
 </head>
 <body>
-	<a href="">새 프로젝트 등록</a>
+	<a href="${pageContext.request.contextPath }/project/insert.do">새 프로젝트 등록</a>
 	<table>
 		<tr>
 			<th>프로젝트이름</th>
