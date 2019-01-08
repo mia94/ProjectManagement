@@ -7,8 +7,22 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <style>
+	#container{
+		margin: 30px auto;
+		width:800px;
+	}
+	header{
+		width:100%;
+		height: 100px;
+		line-height:100px;
+		padding-left:20px;
+		background-color: #B2CCFF;
+		color:#A6A6A6;
+		font-style: italic;
+	}
 	h2{
-	 color:pink;
+	 	color:pink;
+	 	text-align: center;
 	}
 	a{
 		text-decoration: none;
@@ -25,8 +39,13 @@
 </style>
 </head>
 <body>
-	<h2>프로젝트 관리 시스템</h2>
-	<p><a href="project/list.do">프로젝트리스트보기</a></p><!-- 프로젝트상세보기, 수정, 삭제 가능해야함 -->
-	<p><a href="project/insert.do">새 프로젝트 등록하기</a></p>
+	<div id="container">
+		<header>
+			<h1>Project Management System</h1>
+		</header>
+		<h2>프로젝트 관리 시스템</h2>
+		<p><a href="project/list.do">프로젝트리스트보기</a></p><!-- 프로젝트상세보기, 수정, 삭제 가능해야함 -->
+		<p><a href="project/insert.do">새 프로젝트 등록하기</a></p>
+	</div>
 </body>
 </html>

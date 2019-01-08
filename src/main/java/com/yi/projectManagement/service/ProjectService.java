@@ -137,7 +137,7 @@ public class ProjectService {
 		return false;
 	}
 	//내용업데이트
-	public boolean update(int project_no, String string){
+	public boolean update(int project_no,String name, String string,String start, String end, String progress){
 		SqlSession session = null;
 		
 		try{
@@ -147,7 +147,17 @@ public class ProjectService {
 			
 			Project project = new Project();
 			project.setProject_no(project_no);
-			project = dao.selectByNo(project);
+			project.setProject_name(name);
+			//String date로 바꾸기
+			SimpleDateFormat dt = new SimpleDateFormat("yyyy-mm-dd"); 
+			Date startdate = dt.parse(start);
+			Date enddate = dt.parse(end);
+			
+			project.setStartdate(startdate);
+			project.setEnddate(enddate);
+			project.setProgress(progress);
+			
+			dao.update(project);
 			
 			ProjectContent content = new ProjectContent();
 			content.setProject_no(project_no);

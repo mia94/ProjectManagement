@@ -6,12 +6,25 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <style>
+	#contanier{
+		margin: 30px auto;
+		width:800px;
+	}
+	header{
+		width:100%;
+		height: 100px;
+		line-height:100px;
+		padding-left:20px;
+		background-color: #B2CCFF;
+		color:#A6A6A6;
+		font-style: italic;
+	}
 	form{
-		margin: 0 auto;
-		width:400px;
+		margin: 30px auto;
+		width:700px;
 	}
 	fieldset{
-		padding: 20px;
+		padding: 40px;
 	}
 	label{
 		display: block
@@ -20,6 +33,10 @@
 </style>
 </head>
 <body>
+	<div id="contanier">
+	<header>
+		<h1>Project Management System</h1>
+	</header>
 	<form action="${pageContext.request.contextPath }/project/insert.do" method="post">
 		<fieldset>
 			<p>
@@ -52,6 +69,7 @@
 			</p>
 		</fieldset>
 	</form>
+	</div>
 </body>
 </html>
 

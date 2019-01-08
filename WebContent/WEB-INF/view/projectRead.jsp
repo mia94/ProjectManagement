@@ -1,19 +1,49 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <style>
+	#contanier{
+		margin: 30px auto;
+		width:800px;
+	}
+	header{
+		width:100%;
+		height: 100px;
+		line-height:100px;
+		padding-left:20px;
+		background-color: #B2CCFF;
+		color:#A6A6A6;
+		font-style: italic;
+	}
+	p{
+		text-align: center;
+	}
+	a{
+		color:gray;
+		font-weight:bold;
+		text-decoration: none;
+	}
+	a:hover{
+		color:#B2CCFF;
+	}
 	table{
 		border-collapse: collapse;
-		width:400px;
+		width:700px;
+		margin: 30px auto;
 	}
-	td{
-		border:1px solid black;
-		padding: 5px;
+	td, th{
+		border:1px solid gray;
+		padding: 10px;
 	}
+	th{
+		width:150px;
+	}
+	
 </style>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script>
@@ -29,25 +59,29 @@
 </script>
 </head>
 <body>
+	<div id="contanier">
+	<header>
+		<h1>Project Management System</h1>
+	</header>
 	<table>
 		<tr>
-			<td>프로젝트 이름</td>
+			<th>프로젝트 이름</th>
 			<td>${map.project.project_name }</td>
 		</tr>
 		<tr>
-			<td>프로젝트 내용</td>
+			<th>프로젝트 내용</th>
 			<td>${map.content.content }</td>
 		</tr>
 		<tr>
-			<td>시작날짜</td>
-			<td>${map.project.startdate }</td>
+			<th>시작날짜</th>
+			<td><fmt:formatDate value="${map.project.startdate }" type="date" dateStyle="long"/></td>
 		</tr>
 		<tr>
-			<td>종료날찌</td>
-			<td>${map.project.enddate }</td>
+			<th>종료날짜</th>
+			<td><fmt:formatDate value="${map.project.enddate }" type="date" dateStyle="long"/></td>
 		</tr>
 		<tr>
-			<td>상태</td>
+			<th>상태</th>
 			<td>${map.project.progress }</td>
 		</tr>
 	</table>
@@ -57,5 +91,6 @@
 		<a href="${pageContext.request.contextPath }/project/delete.do?project_no=${map.project.project_no }" id="delBtn">[삭제]</a>
 		<a href="${pageContext.request.contextPath }/project/list.do">[돌아가기]</a>
 	</p>
+	</div>
 </body>
 </html>

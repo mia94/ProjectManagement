@@ -23,7 +23,18 @@ public class ProjectModifyHandler implements CommandHandler {
 			req.setAttribute("content", content);
 			return "/WEB-INF/view/projectModifyForm.jsp";
 		}else if(req.getMethod().equalsIgnoreCase("post")){
+			String sNo = req.getParameter("project_no");
+			int project_no = Integer.parseInt(sNo);
+			String project_name = req.getParameter("project_name");
+			String content = req.getParameter("content");
+			String startdate = req.getParameter("startdate");
+			String enddate = req.getParameter("enddate");
+			String progress  = req.getParameter("progress");
 			
+			ProjectService service = ProjectService.getInstance();
+			service.update(project_no, project_name, content, startdate, enddate, progress);
+			
+			return "/project/list.do";
 		}
 		return null;
 	}

@@ -21,8 +21,6 @@ public class ProjectInsertHandler implements CommandHandler {
 			String startdate = req.getParameter("startdate");
 			String enddate = req.getParameter("enddate");
 			String progress  = req.getParameter("progress");
-			System.out.println("name="+name);
-			
 			
 			ProjectService service = ProjectService.getInstance();
 			int error = service.insertProject(name, content, startdate, enddate, progress);
